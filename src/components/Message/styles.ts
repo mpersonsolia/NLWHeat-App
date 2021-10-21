@@ -3,24 +3,32 @@ import { COLORS, FONTS } from "../../theme";
 
 export const styles = StyleSheet.create({
   container: {
-    alignItems: "center",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    paddingHorizontal: 20,
-
+    marginBottom: 36,
     width: "100%",
   },
 
-  logoutButton: {
-    alignItems: "center",
-    flexDirection: "row",
-  },
-
-  logoutText: {
-    color: COLORS.WHITE,
+  message: {
+    lineHeight: 20,
+    marginBottom: 12,
 
     fontFamily: FONTS.REGULAR,
     fontSize: 15,
-    marginRight: -50,
+
+    color: COLORS.WHITE,
+  },
+
+  footer: {
+    alignItems: "center",
+    flexDirection: "row",
+    width: "100%",
+  },
+
+  userName: {
+    marginLeft: 16,
+
+    fontFamily: FONTS.REGULAR,
+    fontSize: 15,
+
+    color: COLORS.WHITE,
   },
 });
