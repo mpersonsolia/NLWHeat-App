@@ -16,7 +16,11 @@ export function SendMessageForm() {
 
     if (messageFormatted.length > 0) {
       setSendingMessage(true);
-      await api.post("/messages", { message: messageFormatted });
+      try {
+        await api.post("/messages", { message: messageFormatted });
+      } catch (err) {
+        console.log(err);
+      }
 
       setMessage("");
       Keyboard.dismiss();

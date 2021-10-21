@@ -26,6 +26,21 @@ export function MessageList() {
     fetchMessages();
   }, []);
 
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (messagesQueue.length > 0) {
+        setCurrentMessages((prevState) => [
+          messagesQueue[0],
+          prevState[0],
+          prevState[2],
+        ]);
+        messagesQueue.shift();
+      }
+    }, 3000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <ScrollView
       style={styles.container}
