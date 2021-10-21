@@ -8,14 +8,16 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#121214",
+      "packagerOpts": {
+        "config": "metro.config.js",
+        "sourceExts": ["js", "jsx", "ts", "tsx", "svg"]
+      }
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
