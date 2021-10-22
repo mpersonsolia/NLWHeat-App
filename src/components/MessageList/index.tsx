@@ -4,10 +4,11 @@ import { io } from "socket.io-client";
 
 import { api } from "../../services/api";
 import { Message, MessageProps } from "../Message";
+import { MESSAGES_EXAMPLE } from "../../utils/messages";
 
 import { styles } from "./styles";
 
-let messagesQueue: MessageProps[] = [];
+let messagesQueue: MessageProps[] = MESSAGES_EXAMPLE;
 
 const socket = io(String(api.defaults.baseURL));
 socket.on("new_message", (newMessage) => {
@@ -32,7 +33,7 @@ export function MessageList() {
         setCurrentMessages((prevState) => [
           messagesQueue[0],
           prevState[0],
-          prevState[2],
+          prevState[1],
         ]);
         messagesQueue.shift();
       }
