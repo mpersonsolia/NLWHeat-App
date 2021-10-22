@@ -11,7 +11,7 @@ import { AntDesign } from "@expo/vector-icons";
 
 import { styles } from "./styles";
 
-type Props = TouchableOpacityProps & {
+type ButtonProps = TouchableOpacityProps & {
   backgroundColor: ColorValue;
   color: ColorValue;
   icon?: React.ComponentProps<typeof AntDesign>["name"];
@@ -26,7 +26,7 @@ export function Button({
   isLoading = false,
   title,
   ...rest
-}: Props) {
+}: ButtonProps) {
   return (
     <TouchableOpacity
       style={[styles.button, { backgroundColor }]}
@@ -35,7 +35,7 @@ export function Button({
       {...rest}
     >
       {isLoading ? (
-        <ActivityIndicator />
+        <ActivityIndicator color={color} />
       ) : (
         <>
           <AntDesign name={icon} size={24} style={styles.icon} />

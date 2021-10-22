@@ -21,6 +21,6 @@ export const styles = StyleSheet.create({
 
     fontFamily: FONTS.REGULAR,
     fontSize: 15,
-    marginRight: -50,
+    marginRight: 20,
   },
 });
